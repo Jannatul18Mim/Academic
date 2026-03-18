@@ -14,3 +14,8 @@ def truthtable(op,name):
             result=int(op(p,q))
             print(f"{p}\t{q}\t{result}")
     print()
+truthtable(AND,"AND")#->
+truthtable(OR,"OR")
+truthtable(IMPLIES,"->")
+truthtable(BIDIRECTIONAL,"<=>")
+
