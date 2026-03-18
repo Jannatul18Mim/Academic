@@ -21,3 +21,51 @@ def simplification(p,q):
     return p if AND(p,q) else None
 def resolution(p,q,r):
     return OR(q,r) if OR(p,q) and OR(not p,r) else None
+
+
+def truth_table_modus_ponans():
+    values={1,0}
+    print("\nTruth table: modus ponans")
+    print(f"{'p'}\t{'q'}\t{'p->q'}\t{'MP'}")
+    for p in values:
+        for q in values:
+            pq = IMPLIES(p, q)
+            mp = modus_ponens(p, q)
+            print(f"{p}\t{q}\t{int(pq)}\t{int(mp)}")
+
+
+def truth_table_modus_tollens():
+    values={True,False}
+    print("\nTruth table: modus tollens")
+    print(f"{'p':^5} {'q':^5} {'not q':^5}{'p->q':^5} {'MT':^5}")
+    for p in values:
+        for q in values:
+            pq=IMPLIES(p,q)
+            nq=not q
+            np= modus_tollens(p,q)
+            print(f"{p!s:^5} {q!s:^5} {nq!s:^5} {pq!s:^5} {np!s:^5}")
+
+def truth_table_hypothetical_syllogism():
+    values={True,False}
+    print("\nTruth Table: Hypothetical Syllogism ")
+    print(f"{'P':^5} {'Q':^5} {'R':^5} {'P->Q':^5} {'Q->R':^5} {'P->R':^5} {'HS':^5}")
+    for p in values:
+        for q in values:
+            for r in values:
+                pq = IMPLIES(p, q)
+                qr = IMPLIES(q, r)
+                pr = IMPLIES(p, r)
+                hs = hypothetical_syllogism(p, q, r)
+                print(f"{p!s:^5} {q!s:^5} {r!s:^5} {pq!s:^5} {qr!s:^5} {pr!s:^5} {hs!s:^5}")
+
+def truth_table_disjunctive_syllogism():
+    values={True,False}
+    print("\nTruth Table: Disjunctive Syllogism ")
+    print(f"{'P':^5} {'Q':^5} {'PvQ':^5} {'not P':^5} {'DS':^5}")
+    for p in values:
+        for q in values:
+            porq = OR(p, q)
+            np = not p
+            ds = disjunctive_syllogism(p, q)
+            print(f"{p!s:^5} {q!s:^5} {porq!s:^5} {np!s:^5} {ds!s:^5}")
+
