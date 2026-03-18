@@ -68,4 +68,47 @@ def truth_table_disjunctive_syllogism():
             np = not p
             ds = disjunctive_syllogism(p, q)
             print(f"{p!s:^5} {q!s:^5} {porq!s:^5} {np!s:^5} {ds!s:^5}")
+def truth_table_addition():
+    values={True,False}
+    print("\nTruth Table: Addition (p => pvq)")
+    print(f"{'P':^5} {'Q':^5} {'PvQ':^5} {'Add':^5}")
+    for p in values:
+        for q in values:
+            pq = OR(p, q)
+            add = addition(p, q)
+            print(f"{p!s:^5} {q!s:^5} {pq!s:^5} {str(add):^5}")
+
+def truth_table_simplification():
+    values={True,False}
+    print("\nTruth Table: Simplification (p^q => p)")
+    print(f"{'P':^5} {'Q':^5} {'P^Q':^5} {'Simp':^5}")
+    for p in values:
+        for q in values:
+            pq = AND(p, q)
+            simp = simplification(p, q)
+            print(f"{p!s:^5} {q!s:^5} {pq!s:^5} {str(simp):^5}")
+
+def truth_table_resolution():
+    values={True,False}
+    print("\nTruth Table: Resolution ((pvq) ^ (not p v r) => (qvr))")
+    print(f"{'P':^5} {'Q':^5} {'R':^5} {'PvQ':^5} {'notPvR':^7} {'QvR':^5} {'Res':^5}")
+    for p in values:
+        for q in values:
+            for r in values:
+                pq = OR(p, q)
+                npr = OR(not p, r)
+                qr = OR(q, r)
+                res = resolution(p, q, r)
+                print(f"{p!s:^5} {q!s:^5} {r!s:^5} {pq!s:^5} {npr!s:^7} {qr!s:^5} {str(res):^5}")
+
+truth_table_modus_ponans()
+''' 
+    truth_table_modus_tollens()
+    truth_table_hypothetical_syllogism()
+    truth_table_disjunctive_syllogism()
+    truth_table_addition()
+    truth_table_simplification()
+    truth_table_resolution()
+    '''
+
 
