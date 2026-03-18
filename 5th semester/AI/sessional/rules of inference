@@ -1,1 +1,23 @@
 
+def AND(p,q):return p and q
+def OR(p,q):return p or q
+def IMPLIES(p,q):return (not p) or q
+def BIDIRECTIONAL(p,q):return p==q
+
+def modus_ponens(p,q):
+     if p and IMPLIES(p,q):
+      return q
+     else :
+      return 0
+def modus_tollens(p,q):
+    return not p if (not q) and IMPLIES(p,q) else None
+def hypothetical_syllogism(p,q,r):
+    return IMPLIES(p,r) if IMPLIES(p,q) and IMPLIES(q,r) else None
+def disjunctive_syllogism(p,q):
+    return q if (not p) and IMPLIES(p,q) else None
+def addition(p,q):
+    return OR(p,q) if p else None
+def simplification(p,q):
+    return p if AND(p,q) else None
+def resolution(p,q,r):
+    return OR(q,r) if OR(p,q) and OR(not p,r) else None
