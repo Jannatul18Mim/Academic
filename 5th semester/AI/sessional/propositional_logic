@@ -1,1 +1,6 @@
-
+#PROPOSITIONAL LOGIC
+def NOT(p):return not p
+def AND(p,q):return p and q
+def OR(p,q):return p or q
+def IMPLIES(p,q):return (not p) or q
+def BIDIRECTIONAL(p,q):return p == q
