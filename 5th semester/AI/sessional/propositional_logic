@@ -4,3 +4,13 @@ def AND(p,q):return p and q
 def OR(p,q):return p or q
 def IMPLIES(p,q):return (not p) or q
 def BIDIRECTIONAL(p,q):return p == q
+#print truthtable
+def truthtable(op,name):
+    values=[1,0]
+    print(f"truthtable for {name}:")
+    print(f"p\tq\t{name}")
+    for p in values:
+        for q in values:
+            result=int(op(p,q))
+            print(f"{p}\t{q}\t{result}")
+    print()
