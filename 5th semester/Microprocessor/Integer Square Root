@@ -1,1 +1,33 @@
 
+org 100h
+.model small
+.stack 100h
+.code
+main proc
+    mov ax, 16h     ; Number to find square root of
+    mov cx, 0h      ; Result storage
+    mov bx, 1h      ; Initial guess
+
+next_guess:
+    mov dx, 0h      
+    mov ax, 16h     
+    div bx          ; AX = number / guess
+    add ax, bx      ; AX = guess + (number / guess)
+    shr ax, 1       ; AX = ((guess + (number / guess)) / 2)
+    cmp ax, cx      
+    je done         
+    mov cx, ax      
+    inc bx          
+    cmp bx, ax      
+    jle next_guess  
+
+done:
+    mov dl, al      
+    add dl, 30h     ; Convert to ASCII
+    mov ah, 2       
+    int 21h         
+
+    mov ah, 4Ch     
+    int 21h
+main endp
+end main
