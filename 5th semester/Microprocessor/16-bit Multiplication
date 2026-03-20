@@ -1,0 +1,28 @@
+org 100h
+.code
+main proc
+    mov ax, 1234h   
+    mov bx, 0020h   
+    mul bx          ; Result in DX:AX
+
+    mov bx, 10      ; Base 10 for conversion
+    mov cx, 0       
+convert_loop:
+    mov dx, 0       
+    div bx          
+    push dx         ; Save digit
+    inc cx          
+    cmp ax, 0       
+    jne convert_loop 
+
+print_loop:
+    pop dx          
+    add dl, 30h     
+    mov ah, 2       
+    int 21h         
+    loop print_loop 
+
+    mov ah, 4Ch     
+    int 21h
+main endp
+end main
