@@ -1,0 +1,28 @@
+org 100h
+.code
+main proc
+    mov al, 25h     ; BCD 25
+    mov bl, 12h     ; BCD 12
+    sub al, bl      ; Hex sub result: 13h
+    das             ; Adjust for BCD
+
+    ; Print high nibble
+    mov ah, al      
+    mov cl, 4       
+    shr al, cl      
+    add al, 30h     
+    mov dl, al      
+    mov ah, 2       
+    int 21h         
+
+    ; Print low nibble
+    mov al, ah      
+    and al, 0Fh     
+    add al, 30h     
+    mov dl, al      
+    int 21h         
+
+    mov ah, 4Ch     
+    int 21h
+main endp
+end main
