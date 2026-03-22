@@ -102,13 +102,11 @@ def truth_table_resolution():
                 print(f"{p!s:^5} {q!s:^5} {r!s:^5} {pq!s:^5} {npr!s:^7} {qr!s:^5} {str(res):^5}")
 
 truth_table_modus_ponans()
-''' 
-    truth_table_modus_tollens()
-    truth_table_hypothetical_syllogism()
-    truth_table_disjunctive_syllogism()
+'''  truth_table_modus_tollens() truth_table_hypothetical_syllogism()  truth_table_disjunctive_syllogism()
     truth_table_addition()
     truth_table_simplification()
     truth_table_resolution()
     '''
+
 
 
