@@ -1,0 +1,36 @@
+org 100h
+    mov al, 25h    ; first BCD number
+    mov bl, 12h    ; second BCD number
+    add al, bl     ; binary add
+    daa            ; adjust for BCD   
+    mov dx, ax
+    call print_dec
+ret
+
+; Routine to print decimal numbers
+print_dec:
+    push ax
+    push bx
+    push cx
+    push dx
+    mov ax, dx       
+    xor cx, cx       
+    mov bx, 10       
+.next_digit:
+    xor dx, dx       
+    div bx           
+    push dx          
+    inc cx
+    test ax, ax
+    jnz .next_digit  
+.print_loop:
+    pop dx           
+    add dl, '0'      
+    mov ah, 02h
+    int 21h          
+    loop .print_loop 
+    pop dx
+    pop cx
+    pop bx
+    pop ax
+    ret
