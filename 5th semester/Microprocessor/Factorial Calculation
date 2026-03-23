@@ -1,0 +1,36 @@
+org 100h            
+
+.model small
+.stack 100h
+.data
+.code
+main proc
+    mov ax, 1       ; Initialize result
+    mov cx, 9       ; Counter for factorial (9)
+
+count:
+    mul cx          ; AX = AX * CX
+    loop count      
+
+    ; Convert and print result
+    mov bx, 10      
+    mov cx, 0       
+divide:
+    xor dx, dx      
+    div bx          
+    push dx         
+    inc cx          
+    cmp ax, 0       
+    jne divide      
+
+print:
+    pop dx          
+    add dl, 30h     
+    mov ah, 2       
+    int 21h         
+    loop print      
+
+    mov ah, 4Ch     
+    int 21h         
+main endp
+end main
