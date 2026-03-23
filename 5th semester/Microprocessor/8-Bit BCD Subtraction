@@ -1,0 +1,10 @@
+org 100h
+    mov al, 25h    ; first BCD number
+    mov bl, 12h    ; second BCD number
+    sub al, bl     ; binary subtract
+    daa            ; adjust for BCD   
+    mov dx, ax
+    call print_dec
+ret
+
+; print_dec routine same as above
