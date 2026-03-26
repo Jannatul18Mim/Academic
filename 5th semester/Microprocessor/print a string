@@ -1,0 +1,27 @@
+
+
+org 100h
+
+    mov ax, 16h    ; number to find sqrt of (fixed in AX for division)
+    mov cx, 0      ; previous guess (result)
+    mov bx, 1      ; current guess
+
+next_guess:
+    mov dx, 0      ; clear DX before div (since div uses DX:AX)
+    mov ax, 16h    ; reload number (divides AX by BX)
+    div bx         ; AX = number / guess
+
+    add ax, bx     ; AX = guess + (number / guess)
+    shr ax, 1      ; AX = average of guess and number/guess
+
+    cmp ax, cx     ; compare new guess with previous guess
+    je done        ; if equal, done
+
+    mov cx, ax     ; update previous guess
+    inc bx         ; increment guess for next iteration
+    jmp next_guess
+
+done:
+    mov ax, cx     ; final result in AX
+    ret
+
