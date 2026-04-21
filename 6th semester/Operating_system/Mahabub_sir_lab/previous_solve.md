@@ -58,8 +58,6 @@
 ---
 
 ## 📝 Mid Term Examination: July–December 2020
-**Course Code:** CIT 322 | **Session:** 2017-18  
-**Total Marks:** 15
 
 ### 1. FCFS Scheduling Analysis [10]
 | Process | Arrival Time | Duration (Burst) |
