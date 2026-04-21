@@ -14,21 +14,94 @@
 * Create two threads (`t1` and `t2`).
 * Print results in parallel and print “Done!” only when both threads finish.
 
-**6. Linux Command Operations [04]** Perform/Explain the following terminal operations:
-* Display information about files in the current directory: `ls`
-* Word/Line count operations:
-    ```bash
-    wc filename          # General count
-    wc -l filename       # Line count
-    wc -c filename       # Character count
-    wc --help            # Help menu
-    ```
+```
+python?code_reference&code_event_index=1
+markdown_content = """# Linux Command Operations Guide
+
+This document provides explanations and examples for various essential Linux terminal operations.
+```
+---
+
+## 6. File Information and Content Analysis
+These commands help you understand the contents and properties of files.
+
+- `ls`: Lists files and directories in the current directory.
+- `ls -lah`: Lists all files (`-a`), including hidden ones, in a long format (`-l`) with human-readable file sizes (`-h`).
+
+- `wc filename`: Counts the lines, words, and characters in a file.
+- `wc -l filename`: Counts only the **lines** in the file.
+- `wc -c filename`: Counts only the **bytes/characters** in the file.
+- `wc --help`: Displays the manual/help page for the `wc` (word count) command.
 
 ---
 
+## 2. Directory and File Management
+Steps to create directories, files, and copy them:
+
+1. **Create directory and file:**
+   ```bash
+   mkdir <student_name>
+   cd <student_name>
+   touch example.txt
+   ```
+2. **Copy file to home directory:**
+   ```bash
+   # Copy the file to a new folder in home
+   mkdir ~/backup_dir
+   cp example.txt ~/backup_dir/
+   ```
+
+---
+
+## 3. Navigation
+- `cd`: Change Directory.
+  - `cd ..`: Move up one level.
+  - `cd ~`: Return to the home directory.
+  - `cd /path/to/folder`: Navigate to a specific path.
+
+---
+
+## 4. Removing Directories
+- `find . -type d -empty -delete`: This command finds all empty directories (`-type d -empty`) in the current location and deletes them (`-delete`).
+
+---
+
+## 5. File Copy/Cut/Move
+- **Copy:** `cp source destination` (e.g., `cp file.txt /tmp/`)
+- **Cut/Move:** `mv source destination` (e.g., `mv file.txt /tmp/`) - Note that `mv` is used for both moving files and renaming them.
+
+---
+
+## 6. Downloading Files
+- `wget URL`: Downloads files from the web directly to your terminal.
+- `aria2c URL`: A multi-protocol download utility that is often faster than `wget` for large files.
+
+---
+
+## 7. User Identification
+- `whoami`: Displays the username of the current logged-in user.
+- `echo $USER`: Prints the value of the environment variable `USER`.
+
+---
+
+## 8. Calendar
+- `cal`: Displays the calendar for the current month.
+- `cal 8 2002`: Displays the calendar for August 2002 (Note: `cal` uses `month year` format).
+
+---
+
+## 9. System Details
+- `neofetch` / `fastfetch`: Displays system information and OS branding.
+- `lscpu`: Shows detailed information about the CPU architecture.
+- `lsblk`: Lists information about all available block devices (disks, partitions, USB drives).
+"""
+
+with open("Linux_Command_Operations.md", "w") as f:
+    f.write(markdown_content)
+
+
 ## 📝 Mid Term Examination: July–December 2022 (PART-B)
 **Course Code:** CIT 322 | **Session:** 2019-20  
-**Total Marks:** 08
 
 * **Compiling Environment:** Running a C/C++ Program in Linux. **[02]**
 * **Connectivity & Redirection:**
@@ -133,4 +206,4 @@ Compare AWT for **FCFS, SJF, and SRTF** for the following:
 * Locate file: `ls -R | grep input.jpg`
 * Manual pages: `man ls` or `ls --help`
 
----
+
