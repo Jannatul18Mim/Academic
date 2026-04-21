@@ -1,3 +1,37 @@
+```
+section .data
+    msg db 'Hello, World!', 0xa
+    len equ $ - msg
+
+section .text
+    global _start
+
+_start:
+    ; syscall: write(1, msg, len)
+    mov rax, 1          ; sys_write
+    mov rdi, 1          ; stdout
+    mov rsi, msg
+    mov rdx, len
+    syscall
+
+    ; syscall: exit(0)
+    mov rax, 60         ; sys_exit
+    xor rdi, rdi        ; return 0
+    syscall
+
+```
+---
+
+```# 1. Assemble the code into an object file (ELF64 format)
+nasm -f elf64 hello.asm -o hello.o
+
+# 2. Link the object file to create an executable
+ld hello.o -o hello
+
+# 3. Run the executable
+./hello
+```
+
 The ./ literally means "look in this current directory"
 
 apt -> three main parts of the process: the Manager (APT), the Catalog, and the Warehouse (Repositories).
