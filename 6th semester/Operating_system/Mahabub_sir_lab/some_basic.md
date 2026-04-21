@@ -1,5 +1,11 @@
 The ./ literally means "look in this current directory"
 
+apt -> three main parts of the process: the Manager (APT), the Catalog, and the Warehouse (Repositories).
+
+APT is the logic that connects your terminal to the warehouse using the catalog.
+
+---
+
 ### C++ Development Cheat Sheet (Kali Linux)
 
 | Action | Command | Description |
