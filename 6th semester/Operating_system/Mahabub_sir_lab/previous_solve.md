@@ -101,60 +101,211 @@ with open("Linux_Command_Operations.md", "w") as f:
 
 
 ## 📝 Mid Term Examination: July–December 2022 (PART-B)
-**Course Code:** CIT 322 | **Session:** 2019-20  
 
-* **Compiling Environment:** Running a C/C++ Program in Linux. **[02]**
-* **Connectivity & Redirection:**
-    ```bash
-    ping -c 5 mim.xyz > file.txt
-    ```
+
+### Compiling Environment: Running a C/C++ Program in Linux. [02]
+
+```bash
+ping -c 5 sharafat.xyz > file.txt
+g++ input.cpp
+./a.out
+```
+
+---
+
+### Linux Shell Commands: Use commands to perform the following: [06]
+
+**(i) Show home directory of your user.**
+```bash
+echo $HOME
+```
+
+**(ii) List files in the current directory.**
+```bash
+ls
+```
+
+**(iii) Change directory.**
+```bash
+cd
+```
+
+**(iv) Create a folder/directory.**
+```bash
+mkdir name
+```
+
+**(v) Delete files and directories.**
+```bash
+rm filename
+```
+
+**(vi) Create a file.**
+```bash
+touch file.txt
+```
+
+**(vii) Access manual pages (help) for a command.**
+```bash
+ls --help
+man ls
+```
+
+**(viii) Change file permissions (make a file executable).**
+```bash
+chmod +x filename
+```
+
+**(ix) Move files via command line.**
+```bash
+mv source/ destination/
+```
+
+**(x) Locate a file in the system.**
+```bash
+ls -R | grep input.jpg
+```
+
+**(xi) Check server connectivity (ping).**
+```bash
+ping 9.9.9.9
+ping -c 5 sharafat.xyz
+```
+
+**(xii) Redirect data/text into a file.**
+```bash
+echo "text content" > file.txt
+```
+"""
+
+write_file("midterm_exam_cit322.md", content)
 
 ---
 
 ## 📝 Mid Term Examination: July–December 2021
-**Course Code:** CIT 322 | **Session:** 2018-19  
-**Total Marks:** 15
 
-1.  Installation of Linux with Virtual Machine. **[01]**
-2.  Running a C/C++ Program in Linux. **[02]**
-3.  **Running Java Code in Linux:**
-    ```bash
-    javac Main.java
-    java Main
-    ```
+### 1. List home directory, navigate folders, and create/delete files/directories.
+```bash
+# List home directory
+ls ~
 
-**[✓] 4. System Administration & Navigation Commands [10]**
-* List home directory, navigate folders, and create/delete files/directories.
-* Check disk space in partitions: `df -h`
-* Network test: `ping mim.xyz`
+# Navigate folders
+cd /path/to/directory
 
+# Create file
+touch filename.txt
+
+# Create directory
+mkdir dirname
+
+# Delete file
+rm filename.txt
+
+# Delete directory
+rm -r dirname
+```
+
+### 2. Check disk space in partitions.
+```bash
+df -h
+```
+
+### 3. Check network connection (ping).
+```bash
+ping sharafat.xyz
+```
+
+### 4. Installation of Linux with Virtual Machine. [01]
+* Download ISO file (e.g., Ubuntu).
+* Create a New Virtual Machine in VirtualBox/VMware.
+* Allocate RAM and Virtual Hard Disk.
+* Mount the ISO image and boot the virtual machine.
+* Follow the on-screen installation prompts.
+
+### 5. Running a C/C++ Program in Linux. [02]
+```bash
+g++ input.cpp -o a.out
+./a.out
+```
+
+### 6. Running a Java Code in Linux. [02]
+```bash
+javac Main.java
+java Main
+```
+
+### 7. Check block devices (disk partitions).
+```bash
+lsblk
+```
+
+### 8. Run commands with administrative/root privileges (sudo).
+```bash
+sudo command
+```
+
+### 9. Compress files into a .zip archive.
+```bash
+zip compressed.zip file_1 file_2
+```
+
+### 10. Check disk usage of a specific file.
+```bash
+du -h compressed.zip
+```
+
+### 11. Check network connection (additional).
+```bash
+ping -c 4 google.com
+```
+"""
 ---
 
 ## 📝 Mid Term Examination: July–December 2020
 
-### 1. FCFS Scheduling Analysis [10]
-| Process | Arrival Time | Duration (Burst) |
-| :--- | :--- | :--- |
-| P1 | 0 | 3 |
-| P2 | 1 | 12 |
-| P3 | 5 | 1 |
 
-* **Tasks:** Draw Gantt Chart and compute Average Waiting Time (AWT).
-* **Analysis:** Define the **"Convoy Effect."** Provide an alternative arrival order to improve AWT and another to demonstrate the convoy effect.
+content = """# Linux Customization & Management [05]
 
-### 2. Comparative Scheduling [10]
-Compare AWT for **FCFS, SJF, and SRTF** for the following:
-| Process | Arrival Time | Burst Time |
-| :--- | :--- | :--- |
-| P1 | 0 | 8 |
-| P2 | 3 | 3 |
-| P3 | 5 | 4 |
-| P4 | 6 | 6 |
+### 1. Change wallpaper and screensaver via Linux command line.
+```bash
+# Change wallpaper (GNOME)
+gsettings set org.gnome.desktop.background picture-uri file:///path/to/image.jpg
 
-### 3. Algorithm Simulation
-* **[✓]** Simulate **Round-Robin** Scheduling. **[10]**
-* Simulate **Priority Scheduling** (Random).
-* Simulate **FCFS** and **SJF** (Preemptive and Non-Preemptive).
+# Change screensaver
+gsettings set org.gnome.desktop.screensaver picture-uri file:///path/to/image.jpg
+```
+
+### 2. Create a directory (student name), create a file within, and copy it to a new directory in the home folder.
+```bash
+# Create directory
+mkdir student_name
+
+# Create a file within the directory
+touch student_name/test.txt
+
+# Create the target directory in home
+mkdir ~/test
+
+# Copy the file to the new directory
+cp student_name/test.txt ~/test/
+```
+
+### 3. Create disk partitions.
+```bash
+# View current block devices to identify the disk
+lsblk
+
+# Use fdisk to manage partitions (requires root privileges)
+sudo fdisk /dev/sdX
+
+# Inside fdisk:
+# n - create a new partition
+# p - primary partition
+# w - write changes and exit
+```
+"""
+
+write_file("linux_customization_management.md", content)
 
 ---
 
