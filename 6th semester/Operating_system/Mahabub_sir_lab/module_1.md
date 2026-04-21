@@ -128,5 +128,4 @@ java Main
 ### 3. Python Code
 ```bash
 python main.py
-```
-```
+
