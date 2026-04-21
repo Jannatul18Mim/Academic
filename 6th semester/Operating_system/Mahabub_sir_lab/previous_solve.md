@@ -1,5 +1,4 @@
-## 📝 Mid Term Examination: 
-July–December 2023
+## 📝 Mid Term Examination: July–December 2023
 
 ### SET-A (Synchronization)
 * Implement Peterson’s solution for ensuring synchronization. **[07]**
