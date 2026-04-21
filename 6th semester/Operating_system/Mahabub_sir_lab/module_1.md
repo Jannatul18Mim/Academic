@@ -6,7 +6,7 @@
 | Command | Description |
 | :--- | :--- |
 | `touch`| make a new empty file
-| `nano` | for editing/openning/writing in a file(he terminal will turn into a text editor.) |
+| `nano` | for editing/openning/writing in a file(the terminal will turn into a text editor.) |
 | `dir` | Lists files and directories in the current directory. |
 | `cd` | Changes the current directory. |
 | `md` | Creates a new directory. |
