@@ -25,6 +25,9 @@
 
 ---
 
+## 1.
+```
+
 #include <bits/stdc++.h>
 using namespace std;
  
@@ -48,7 +51,10 @@ int main() {
 }
 
 
+```
 
+## 2.
+```
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -80,7 +86,9 @@ int main() {
     cout << "Main thread finished. ID -> " << shared_id << endl;
     return 0;
 }
-
+```
+## 3
+```
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -135,7 +143,10 @@ int main() {
  
     return 0;
 }
+```
 
+## 4
+```
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -181,7 +192,9 @@ int main() {
     return 0;
 }
 
-
+```
+## 5
+```
 #include <bits/stdc++.h>
 using namespace std;
  
@@ -226,7 +239,9 @@ int main() {
  
     return 0;
 }
-
+```
+## 6
+```
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -270,7 +285,9 @@ int main() {
     return 0;
 }
 
-
+```
+## 6.
+```
 #include <bits/stdc++.h>
 using namespace std;
  
@@ -308,9 +325,10 @@ int main() {
     return 0;
 }
 
+```
 
-
-
+## 7
+```
 
 #include <bits/stdc++.h>
 using namespace std;
